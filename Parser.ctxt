@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Parser
+comment0.text=\r\n\ Klasse\ Parser\r\n\ \r\n\ @author\ Steven\ und\ Ingo\r\n\ @version\ 24-01-22\r\n
+comment1.params=
+comment1.target=Parser()
+comment2.params=
+comment2.target=void\ textZuVokabeln()
+numComments=3
