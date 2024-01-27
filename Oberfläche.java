@@ -33,5 +33,8 @@ public class Oberfläche extends JFrame
     
     private JScrollPane jTextArealScrollPane = new JScrollPane (jTextAreal);
     
-    
+    public static void main(String[] args)
+    {
+    	System.out.println("Hello world!");
+    }
 }

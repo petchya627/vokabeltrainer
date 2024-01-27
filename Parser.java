@@ -1,12 +1,6 @@
-/**
- * Import der Klasse java.nio.file.Files
- */
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.Files;
-import static java.nio.charset.StandardCharsets.UTF_8;
-import java.util.List;
 
 /**
  * Klasse Parser
@@ -18,38 +12,32 @@ public class Parser
 {
     // Attribute
     private String dateipfad;
-    private Vokabel vokabeln;
+    private FileReader reader;
+    private BufferedReader bufferedReader;
 
-    public Parser() // (String pDateipfad)
+    /**
+     * Konstruktor der Klasse Parser
+     */
+    public Parser()
     {
-        // dateipfad = pDateipfad;
-        dateipfad = "G:\\2024-Q1-IF-GK1\\Austausch\\Ingo Steven Nick Justus Vokabeltrainer\\vokabelliste,In,St,Ni,Ju-copy\\Vokabeln.txt";
-    }
-    
-    public List<String> einlesen()
-    {
-        List<String> zeilen;
+        dateipfad = "G:\\2024-Q1-IF-GK1\\Austausch\\Vokabeltrainer_Steven_Nick_Justus_Steven_Ingo\\Vokabeln.txt";
         try
         {
-            zeilen = Files.readAllLines(Path.of(dateipfad), UTF_8);
-            return zeilen;
+            reader = new FileReader(dateipfad);
+            bufferedReader = new BufferedReader(reader);
         }
         catch (IOException e)
         {
-            System.out.println("Error: Textdatei nicht gefunden");
-        }
-        finally
-        {
-            return zeilen;
+        	System.out.println("Error: Dateien nicht gefunden!");
         }
     }
     
-    public Vokabel[] textZuVokabeln()
+    /*
+     * Klasse zum Erstellen eines Objektes der Klasse Vokabel
+     * @return vokabel Objekt der Klasse Vokabel
+     */
+    public void textZuVokabel()
     {
-        List<String> zeilen = einlesen();
-        for (String zeile : zeilen)
-        {
-            
-        }
+    	
     }
 }
