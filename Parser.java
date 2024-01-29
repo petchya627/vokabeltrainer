@@ -45,17 +45,33 @@ public class Parser
             String zeile = bufferedReader.readLine();
             if (dateiname.equals("EN-DE_Words_1.tsv"))
             {
-            	String[] array = zeile.split("\t");
-            	String wort = array[0];
-            	String uebersetzung = filterInformationOfString(array[1])[0];
-            	String info = array[2];
-            	if (array.length >= 4)
+            	try
             	{
-            		info += " " + array[3];
+	            	String[] array = zeile.split("\t");
+	            	String wort = array[0].trim();
+	            	String uebersetzung = filterInformationOfString(array[1])[0];
+	            	String info;
+	            	if (array.length >= 3)
+	            	{
+	            		info = array[2].trim();
+		            	if (array.length >= 4)
+		            	{
+		            		info += " " + array[3];
+		            	}
+	            	}
+	            	else
+	            	{
+	            		info = "";
+	            	}
+	            	Vokabel vokabel = new Vokabel(wort, uebersetzung, info);
+	            	bufferedReader.close();
+	            	return vokabel;            		
             	}
-            	Vokabel vokabel = new Vokabel(wort, uebersetzung, info);
-            	bufferedReader.close();
-            	return vokabel;
+            	catch (Exception e)
+            	{
+            		printException(e);
+            		erstelleVokabel();
+            	}
             }
             bufferedReader.close();
         }
@@ -96,7 +112,7 @@ public class Parser
      * Hilfsfunktion zur Information über eine IOException
      * @param e Objekt der Klasse IOException
      */
-    public void printException(IOException e)
+    public void printException(Exception e)
     {
     	String name = e.getClass().toString().split(" ")[1];
     	String ausgabe = String.format("ERROR: %s", name);
@@ -112,7 +128,7 @@ public class Parser
     {
     	String str = pStr;
     	List<String> liste = new List<String>();
-    	String[] zeichen = new String[] {"[", "]", "{", "}", "(", ")"};
+    	String[] zeichen = new String[] {"[", "]", "{", "}", "(", ")", "<", ">"};
     	for (int i = 0; i < zeichen.length; i += 2)
     	{
         	if (str.indexOf(zeichen[i]) != -1)
@@ -122,13 +138,14 @@ public class Parser
         		liste.append(str.substring(startindex, endindex));
         		String str1 = str.substring(0, startindex).trim();
         		String str2 = str.substring(endindex, str.length()).trim();
-        		str = str1 + str2;
+        		str = str1 + " " + str2;
         	}
     	}
     	str = str.trim();
     	liste.toFirst();
     	liste.insert(str);
-    	return listToArray(liste);
+    	String[] rueckgabe = listToArray(liste);
+    	return rueckgabe;
     }
     
     /**

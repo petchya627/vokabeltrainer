@@ -46,7 +46,7 @@ public class Oberfläche
     	for (int i = 0; i < 20; i++)
     	{
     		Vokabel a = p.erstelleVokabel();
-    		System.out.println(a.getWort() + " = " + a.getUebersetzung() + " (" + a.getInfo() + ")");
+    		System.out.println(a.getWort() + " = " + a.getUebersetzung() + " (((" + a.getInfo() + ")))");
     	}
     }
 }
