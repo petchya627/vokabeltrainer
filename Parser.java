@@ -17,7 +17,6 @@ public class Parser
 
     /**
      * Konstruktor der Klasse Parser
-     * @throws java.io.IOException
      */
     public Parser(String pDateiname)
     {
@@ -29,7 +28,6 @@ public class Parser
     /**
      * Methode zum Erstellen eines Objektes der Klasse Vokabel
      * @return vokabel Objekt der Klasse Vokabel
-     * @throws java.io.IOException
      */
     public Vokabel erstelleVokabel()
     {
@@ -85,7 +83,6 @@ public class Parser
     /**
      * Methode zum Zählen der Zeilen
      * @return count Anzahl der Zeilen in der Datei (0 im Falle einer IOException)
-     * @throws java.io.IOException
      */
     public int countRows()
     {
@@ -183,12 +180,14 @@ public class Parser
     
     /**
      * Set-Methode für das Attribut dateiname
+     * @param pDateiname zu verändernder Name der Datei
      */
     public void setDateiname(String pDateiname)
     {
     	dateiname = pDateiname;
     	dateipfad = System.getProperty("user.dir") + "\\data\\" + dateiname;
     }
+    
      /**
       * Get-Methode für das Attribut dateipfad
       * @return dateipfad

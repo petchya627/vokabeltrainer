@@ -39,6 +39,7 @@ public class Oberfläche
     private JScrollPane jTextArealScrollPane = new JScrollPane (jTextAreal);
     */
     
+	/*
     public static void main(String[] args)
     {
     	System.out.println("Hello world!");
@@ -49,4 +50,5 @@ public class Oberfläche
     		System.out.println(a.getWort() + " = " + a.getUebersetzung() + " (((" + a.getInfo() + ")))");
     	}
     }
+    */
 }
