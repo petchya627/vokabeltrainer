@@ -1,41 +1,51 @@
-
 /**
- * Beschreiben Sie hier die Klasse Vokabel.
+ * Klasse zum Speichern einer Vokabel
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Nick, Justus, Steven, Ingo
+ * @version 24-01-22
  */
+
 public class Vokabel
 {
-    // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
-    private String englisch;
-    private String deutsch;
-    private boolean gewusst;
+    // Instanzvariablen
+    private String wort;
+    private String uebersetzung;
+    private String info;
 
     /**
      * Konstruktor für Objekte der Klasse Vokabel
      */
-    public Vokabel(String pDeutsch,String pEnglisch,boolean pGewusst)
+    public Vokabel(String pWort, String pUebersetzung, String pInfo)
     {
-        deutsch  = pDeutsch;
-        englisch = pEnglisch;
-        gewusst = pGewusst;
-        
+        wort = pWort;
+        uebersetzung = pUebersetzung;
+        info = pInfo;
     }
-    public void setGewusst(boolean pGewusst)
+
+    /**
+     * Get-Methode für das Attribut wort
+     * @return wort der Wortteil der Vokabel
+     */
+    public String getWort()
     {
-        pGewusst = gewusst;
+        return wort;
     }
-    public String getEnglisch()
+    
+    /**
+     * Get-Methode für das Attribut uebersetzung
+     * @return uebersetzung der Uebersetzungsteil der Vokabel
+     */
+    public String getUebersetzung()
     {
-        return englisch;
+        return uebersetzung;
     }
-     public String getDeutsch()
+    
+    /**
+     * Get-Methode für das Attribut info
+     * @return info Informationen zur Vokabel
+     */
+    public String getInfo()
     {
-        return deutsch;
-    }
-     public boolean getGewusst()
-    {
-        return gewusst;
+    	return info;
     }
 }

@@ -42,6 +42,11 @@ public class Oberfläche
     public static void main(String[] args)
     {
     	System.out.println("Hello world!");
-    	Parser p = new Parser();
+    	Parser p = new Parser("EN-DE_Words_1.tsv");
+    	for (int i = 0; i < 20; i++)
+    	{
+    		Vokabel a = p.erstelleVokabel();
+    		System.out.println(a.getWort() + " = " + a.getUebersetzung() + " (" + a.getInfo() + ")");
+    	}
     }
 }
