@@ -5,7 +5,7 @@
  * @author (Ihr Name) 
  * @version (eine Versionsnummer oder ein Datum)
  */
-/*
+
 import java.awt.*;
 
 import java.awt.event.*;
@@ -13,13 +13,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import javax.swing.event. *;
+
 public class Oberfläche extends JFrame
-
-*/
-
-public class Oberfläche
 {
-	/*
     private JButton jButtonl = new JButton () ;
     
     private JLabel jLabell = new JLabel () ;
@@ -37,18 +33,4 @@ public class Oberfläche
     private JTextArea jTextAreal = new JTextArea ("") ;
     
     private JScrollPane jTextArealScrollPane = new JScrollPane (jTextAreal);
-    */
-    
-	/*
-    public static void main(String[] args)
-    {
-    	System.out.println("Hello world!");
-    	Parser p = new Parser("EN-DE_Words_1.tsv");
-    	for (int i = 0; i < 20; i++)
-    	{
-    		Vokabel a = p.erstelleVokabel();
-    		System.out.println(a.getWort() + " = " + a.getUebersetzung() + " (((" + a.getInfo() + ")))");
-    	}
-    }
-    */
 }

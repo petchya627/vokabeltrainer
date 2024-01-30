@@ -4,11 +4,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Klasse Parser
+ * Klasse Konvertierer
  * @author Steven und Ingo
  * @version 24-01-22
  */
-public class Parser
+public class Konvertierer
 {
     // Attribute
     private String dateipfad;
@@ -18,7 +18,7 @@ public class Parser
     /**
      * Konstruktor der Klasse Parser
      */
-    public Parser(String pDateiname)
+    public Konvertierer(String pDateiname)
     {
     	setDateiname(pDateiname);
         zeilenAnzahl = countRows();
